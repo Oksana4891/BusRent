@@ -1,0 +1,69 @@
+.inner {
+  padding: 150px 20px 0px;
+  @media screen and (max-width: 768px) {
+    padding: 80px 20px 0px;
+  }
+}
+
+// Main bottom
+
+.main-btn {
+  position: relative;
+  display: block;
+  min-width: 200px;
+  // background: #84dcc6;
+  background: $main-style-color;
+  border-radius: 10px;
+  color: rgb(105, 104, 104);
+  // color: white;
+  border: 1px solid white;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: transform 0.3s linear;
+  overflow: hidden;
+  @media screen and (max-width: 992px) {
+    font-size: 14px;
+    padding: 10px 10px;
+    min-width: 150px;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 12px;
+    padding: 10px 10px;
+    min-width: 100px;
+  }
+}
+
+.main-btn:hover {
+  transform: scale(1.1);
+}
+
+.main-btn.is-active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 100%;
+  background-color: white;
+  filter: blur(10px);
+  transform: translateX(-4em) skewX(-45deg);
+  animation: move-light 0.8s infinite;
+}
+
+.confidentiality {
+  font-size: 10px;
+  text-align: center;
+  @media screen and (max-width: 576px) {
+    font-size: 8px;
+  }
+
+  .confidentiality_link {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 10px;
+  }
+}

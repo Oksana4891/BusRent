@@ -1,0 +1,62 @@
+.call-btn {
+  position: fixed;
+  bottom: 0;
+  right: 45px;
+  outline: 0;
+  margin-bottom: 50px;
+  z-index: 200;
+  @media screen and (max-width: 576px) {
+    right: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.call-btn_main {
+  display: block;
+  padding: 20px 10px;
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 100%;
+  background-color: #0094ff;
+  outline: 0;
+  z-index: 100;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  animation: pulsation 3s ease infinite;
+  @media screen and (max-width: 576px) {
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+  }
+}
+
+.messenger_bnt {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  transform: scaleY(0) rotate(180deg);
+  transition: transform 0.2s ease-out;
+  @media screen and (max-width: 576px) {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.5s ease-out;
+  }
+}
+
+.messenger_bnt.is-open {
+  transform: scaleY(1) rotate(0deg);
+}
+
+.call-btn_icon {
+  width: 80px;
+  height: 80px;
+  @media screen and (max-width: 576px) {
+    width: 60px;
+    height: 60px;
+  }
+}

@@ -1,0 +1,272 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: #4b4e6d;
+  width: 100%;
+  padding: 15px 0 10px;
+  color: white;
+}
+
+.header_inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_info-mobile {
+  display: none;
+}
+
+.header_inner-mobile {
+  display: none;
+}
+
+.header_phone {
+  font-size: 20px;
+  padding: 5px 40px;
+  letter-spacing: 1.5;
+  position: relative;
+}
+
+.header_phone::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-image: url(../images/icons/cell_phone.svg);
+  background-position: 0 0px;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+}
+
+.header_btm {
+  display: inline-block;
+  color: white;
+  background: transparent;
+  border: 2px solid $main-style-color;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+}
+
+.header_btm:hover {
+  transform: scale(1.1);
+}
+
+// Navigation
+.menu {
+  padding-top: 10px;
+}
+
+.menu_list {
+  display: flex;
+  justify-content: center;
+}
+
+.menu_list-item {
+  margin-right: 35px;
+  position: relative;
+  text-align: center;
+}
+
+.menu_list-link {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px;
+  display: inline-block;
+  overflow: hidden;
+  @media screen and (max-width: 992px) {
+    font-size: 14px;
+  }
+}
+
+.menu_list-link:before {
+  content: '';
+  position: absolute;
+  transition: opacity 0.5s ease;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: $main-style-color;
+  bottom: 0;
+  opacity: 0;
+}
+
+.menu_list-link:after {
+  content: '';
+  position: absolute;
+  transition: opacity 0.5s ease;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: $main-style-color;
+  top: 0;
+  opacity: 0;
+}
+
+.menu_list-link:hover:before,
+.menu_list-link:hover:after {
+  opacity: 1;
+}
+
+// Menu for mobile
+
+@media (max-width: 768px) {
+  .header_inner {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .header_inner-mobile {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .burger-menu {
+    position: absolute;
+    display: block;
+    z-index: 220;
+    background-color: #4b4e6d;
+    width: 80%;
+    right: -80%;
+    top: 62px;
+    transition: right 0.5s linear;
+    overflow: hidden;
+  }
+
+  .burger-menu.is-active {
+    right: 0;
+  }
+
+  .menu_list {
+    display: block;
+  }
+
+  .menu_list-item {
+    padding: 20px;
+    border-bottom: 1px solid #252525;
+    cursor: pointer;
+    margin-right: 0;
+  }
+
+  .menu_list-link:hover {
+    color: $main-style-color;
+  }
+
+  .menu_list-link:hover:before,
+  .menu_list-link:hover:after {
+    opacity: 0;
+  }
+
+  .menu_item:first-child {
+    padding-top: 80px;
+  }
+
+  .header_info {
+    display: none;
+  }
+
+  .header_info-mobile {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .header_phone {
+    display: block;
+    text-align: center;
+  }
+
+  .header_phone::before {
+    left: 35px;
+  }
+
+  .header_btm {
+    display: block;
+    margin: 20px auto;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 15px;
+  }
+}
+
+// Burger icon
+
+.burger {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.burger {
+  display: flex;
+}
+
+.burger h4 {
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 10px;
+  padding: 0 0 0 10px;
+}
+
+.burger-line {
+  padding-left: 20px;
+  z-index: 110;
+  position: relative;
+  width: 30px;
+  height: 4px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.burger-line::before {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: '';
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.burger-line::after {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  content: '';
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.burger.burger_active .burger-line {
+  background-color: transparent;
+}
+
+.burger.burger_active .burger-line::before {
+  transform: rotate(45deg);
+  top: 0px;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+.burger.burger_active .burger-line::after {
+  transform: rotate(-45deg);
+  top: 0px;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}

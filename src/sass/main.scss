@@ -1,0 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import 'normalize.scss';
+@import 'normalize.scss';
+@import 'base.scss';
+@import 'variables.scss';
+@import 'helpers.scss';
+@import 'animation.scss';
+@import './layout/header';
+@import './layout/banner';
+@import './layout/section_bus';
+@import './layout/section_form';
+@import './layout/calcPrice-form';
+@import './layout/section_services';
+@import './layout/section_stages';
+@import './layout/footer';
+@import './layout/popup';
+@import './layout/button-call';
+@import './components/scroll-up';

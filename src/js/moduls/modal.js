@@ -1,9 +1,10 @@
+
 function bindModal(triggerSelector, modalSelector, closeSelector,animationOpen, animationClose, closeClickOverlay = true) {
     const triggers = document.querySelectorAll(triggerSelector),
         modal = document.querySelector(modalSelector),
         close = document.querySelector(closeSelector),
         modals = document.querySelectorAll('.popup');
-        console.dir(modals);
+       
 
     triggers.forEach(item => {
         item.addEventListener('click', (e) => {
@@ -15,31 +16,28 @@ function bindModal(triggerSelector, modalSelector, closeSelector,animationOpen, 
 
 
     // Function close modal
-
-
     close.addEventListener('click', (e) => {
         modal.classList.add(animationClose);
-        handelCloseModal(modal);
+        handelCloseModal(modal, animationOpen);
     });
 
     modal.addEventListener('click', (e) => {
         if (e.target === e.currentTarget && closeClickOverlay) {
             modal.classList.add(animationClose);
-            handelCloseModal(modal);
+            handelCloseModal(modal, animationOpen);
         }
     });
-
-       function handelCloseModal(modal) {
+     
+    function handelCloseModal(modal, animationOpen) {
         document.body.style.overflow = "";
         modal.classList.remove('is-open');
         modal.classList.remove(animationOpen);
-    }
+    } 
 
      // Function hide all modal
 
     function hideAllModals() {
         modals.forEach(item => {
-            console.log("скрываю")
             handelCloseModal(item);
         });
     }

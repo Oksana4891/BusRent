@@ -1,7 +1,7 @@
 // Open Messenger button
 
 const triggersButton = document.querySelector('.js-call-btn');
-const messengerButtons = document.querySelectorAll('[name="messenger_bnt"]');
+const messengerButtons = document.querySelectorAll('.messenger_bnt');
 
 triggersButton.onclick = function () {
   messengerButtons.forEach(item => {

@@ -1,5 +1,4 @@
 .banner {
-  position: relative;
   background: rgb(0, 0, 0);
   background: linear-gradient(
       90deg,
@@ -31,15 +30,6 @@
     background-repeat: no-repeat;
     overflow: hidden;
     min-height: 600px;
-  }
-}
-
-.main-slider_list {
-  position: absolute;
-  top: 0;
-  left: 100px;
-  @media screen and (max-width: 576px) {
-    left: 10px;
   }
 }
 

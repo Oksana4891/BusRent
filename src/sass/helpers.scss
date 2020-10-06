@@ -11,12 +11,10 @@
   position: relative;
   display: block;
   min-width: 200px;
-  // background: #84dcc6;
-  background: $main-style-color;
+  background: $main-button-color;
   border-radius: 10px;
-  color: rgb(105, 104, 104);
-  // color: white;
-  border: 1px solid white;
+  color: $main-title-color;
+  border: none;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;

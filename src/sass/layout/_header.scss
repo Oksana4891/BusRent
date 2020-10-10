@@ -8,9 +8,20 @@
   color: white;
 }
 
+
+
 .header_inner {
   display: flex;
   justify-content: space-between;
+}
+
+.logo img {
+  width: 280px;
+  height: 50px;
+  @media screen and (max-width: 992px) {
+  width: 240px;
+   height: 50px;
+  }
 }
 
 .header_info-mobile {
@@ -51,7 +62,7 @@
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
-  padding: 15px 20px;
+  padding: 10px 20px;
   cursor: pointer;
   transition: transform 0.2s linear;
 }
@@ -80,7 +91,7 @@
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 10px;
+  padding: 5px 10px;
   display: inline-block;
   overflow: hidden;
   @media screen and (max-width: 992px) {
@@ -124,6 +135,11 @@
     display: none;
   }
 
+  .logo-mobile img {
+    width: auto;
+    height: 30px;
+  }
+
   .menu {
     display: none;
   }
@@ -132,7 +148,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 10px;
+    padding: 0px 10px;
     overflow: hidden;
   }
 
@@ -143,7 +159,7 @@
     background-color: #4b4e6d;
     width: 80%;
     right: -80%;
-    top: 62px;
+    top: 59px;
     transition: right 0.5s linear;
     overflow: hidden;
   }
@@ -186,13 +202,16 @@
   }
 
   .header_phone {
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     letter-spacing: 1;
   }
 
   .header_phone::before {
-    left: 35px;
+    left: 80px;
+    @media (max-width: 576px) {
+      left: 0;
+    }
   }
 
   .header_btm {
@@ -215,6 +234,7 @@
 
 .burger {
   display: flex;
+  padding-top: 10px;
 }
 
 .burger h4 {
